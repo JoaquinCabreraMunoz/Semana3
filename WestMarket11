@@ -1,0 +1,50 @@
+package westmarket1.pkg1;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class WestMarket11 {
+    ArrayList<String> insertar = new ArrayList();
+    
+    public static void main(String[] args) {
+        
+        WestMarket11 producto = new WestMarket11();
+        producto.insertar = new ArrayList();
+        producto.leerOpcion();
+    }
+    public void leerOpcion(){
+        Scanner teclado = new Scanner(System.in);
+        int opcion=0;
+        
+        do{
+            System.out.println("\n Lista de números");
+            System.out.println("1.- Registrar producto");
+            System.out.println("2.- Imprimir producto");
+            System.out.println("3.- Eliminar producto");
+            System.out.println("4.- Salir");
+            System.out.println("Seleccione un opción:  ");
+            opcion = teclado.nextInt();
+            
+            switch (opcion){
+                case 1:
+                registrarProducto();
+                break;
+                
+                /*case 2:
+                imprimirProducto();
+                break;
+                
+                case 3:
+                eliminarProducto();
+                break;*/
+                
+                }
+          }
+        while(opcion!=7);
+    }
+    public void registrarProducto(){
+        Scanner registra = new Scanner(System.in);
+        System.out.println("Ingrese el nombre del producto");
+        String articulo = registra.nextLine();
+        insertar.add(articulo);
+    }
+}
