@@ -1,0 +1,32 @@
+package westmarket1.pkg1;
+import java.util.ArrayList;
+        
+        public class Categoria {
+    private int codigo;
+    private String nombre;
+
+    public Categoria(int codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+Categoria cat1 = new Categoria(1, "Bebidas");    
+Categoria cat2 = new Categoria(2, "Congelados");
+Categoria cat3 = new Categoria(3, "Lácteos");
+Categoria cat4 = new Categoria(4, "Aseo");
+}
