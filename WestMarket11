@@ -29,22 +29,87 @@ public class WestMarket11 {
                 registrarProducto();
                 break;
                 
-                /*case 2:
+                case 2:
                 imprimirProducto();
                 break;
                 
                 case 3:
                 eliminarProducto();
-                break;*/
+                break;
                 
                 }
           }
-        while(opcion!=7);
+        while(opcion<=3);
+        System.out.println("Hasta pronto");
     }
     public void registrarProducto(){
         Scanner registra = new Scanner(System.in);
-        System.out.println("Ingrese el nombre del producto");
-        String articulo = registra.nextLine();
-        insertar.add(articulo);
+        System.out.println("Ingrese el código del producto");
+        int codigo = registra.nextInt();
+        registra.nextLine();
+        String codigoString = String.valueOf(codigo);
+        insertar.add(codigoString);
+        System.out.println("Ingrese una descripción del producto: ");
+        String descripcion = registra.nextLine();
+        insertar.add(descripcion);
+        System.out.println("Ingrese el precio del producto: ");
+        int precio = registra.nextInt();
+        String precioString = String.valueOf(precio);
+        insertar.add(precioString);
+        System.out.println("Ingrese el Stock: ");
+        int stock = registra.nextInt();
+        String stockString = String.valueOf(stock);
+        insertar.add(stockString);
+        System.out.println("Ingrese la categoria");
+        int codigoCategoria = registra.nextInt();
+        String codigoCategoriaString = String.valueOf(codigoCategoria);
+        insertar.add(codigoCategoriaString);
+        /*Categoria categoria;
+        categoria = null;
+        if (codigoCategoria == 1){
+            categoria = new Categoria(1, "Bebidas");
+        }
+        if (codigoCategoria == 2){
+            categoria = new Categoria(2,"Congelados");
+        }
+        if (codigoCategoria == 3){
+            categoria = new Categoria(3,"Lácteos");
+        }
+        if (codigoCategoria == 4){
+            categoria = new Categoria(4,"Aseo");
+        }else{
+            System.out.println("La categoria no existe");
+        }       
+        String codigoCategoriaString = String.valueOf(codigoCategoria);
+        insertar.add(codigoCategoriaString);
+        Producto producto = new Producto(codigo, descripcion, precio, stock, categoria);*/
+        System.out.println("Producto registrado correctamente: ");
+        /*System.out.println(producto);*/
+    }
+    public void imprimirProducto(){
+        if (!insertar.isEmpty()){
+            System.out.println("Listado de productos: ");
+            for (int i= 0; i< insertar.size(); i++){
+                System.out.println(insertar.get(i));
+        }
+       }else{
+            System.out.println("No existen productos.");
+        } 
+        
+    }
+    public void eliminarProducto(){
+        Scanner elimina = new Scanner(System.in);
+        int codigo = 0;
+        int indice = -1;
+        System.out.println("Ingrese el codigo del producto que desea eliminar: ");
+        codigo = elimina.nextInt();
+        indice = insertar.indexOf(codigo);
+        if (indice != -1){
+            insertar.remove(indice);
+            System.out.println("Producto elminiado.");
+        }else{
+            System.out.println("Producto no se encuentra registrado.");
+        }
     }
 }
+    
